@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: custom-5xx-error-page
+data:
+  500.html: |
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>500 Internal Server Error</title>
+    </head>
+    <body>
+      <h1>500 Internal Server Error</h1>
+      <p>Sorry, something went wrong on our end.</p>
+    </body>
+    </html>
