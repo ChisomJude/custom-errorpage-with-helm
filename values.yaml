@@ -1,0 +1,12 @@
+nginx:
+  config:
+    nginx.conf: |-
+      {{ .Files.Get "nginx.conf" | nindent 8 }}
+  resources:
+    configMaps:
+      - name: 4xx-error-page
+        mountPath: /usr/share/nginx/html
+        subPath: 404.html
+      - name: 5xx-error-page
+        mountPath: /usr/share/nginx/html
+        subPath: 500.html
